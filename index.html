@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Ponto</title>
+  <link rel="stylesheet" href="./src/tailwind-output.css">
+</head>
+
+<body class="bg-gray-100">
+  <div id="loading"
+    class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-80 flex justify-center items-center z-50">
+    <h3 class="text-xl text-gray-600 font-semibold">Carregando...</h3>
+  </div>
+  <div class="container mx-auto px-4 py-4">
+    <div class="md:flex md:items-center md:justify-between mb-1">
+      <div class="min-w-0 flex-1">
+        <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Registro de Ponto</h2>
+      </div>
+      <div class="mt-4 flex md:ml-4 md:mt-0">
+        <span class="text-gray-600">Horário atual: </span>
+        <span id="horarioAtual" class="text-gray-800 font-semibold"></span>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Usuário</label>
+          <input type="text" id="username"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Senha</label>
+          <input type="password" id="password"
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl">
+        <div class="mt-8 grid grid-cols-1">
+          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+              <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-300">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                        Dia
+                      </th>
+                      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Entrada 1</th>
+                      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Saída 1</th>
+                      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Entrada 2</th>
+                      <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Saída 2</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                        Segunda-feira
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="segunda_entrada1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="segunda_saida1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="segunda_entrada2"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="segunda_saida2"></td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                        Terça-feira
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="terca_entrada1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="terca_saida1">
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="terca_entrada2"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="terca_saida2">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                        Quarta-feira
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quarta_entrada1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quarta_saida1">
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quarta_entrada2"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quarta_saida2">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                        Quinta-feira
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quinta_entrada1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quinta_saida1">
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quinta_entrada2"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="quinta_saida2">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+                        Sexta-feira
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="sexta_entrada1"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="sexta_saida1">
+                      </td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="sexta_entrada2"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><input type="time"
+                          class="border-none" id="sexta_saida2">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6">
+        <button id="registrarPonto" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded disabled:bg-gray-400">
+          Registrar Ponto
+        </button>
+        <button id="cancelar"
+          class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded hidden ml-4">
+          Cancelar
+        </button>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg p-6 mt-3">
+      <h2 class="text-xl font-bold text-gray-800 mb-4">Console</h2>
+      <pre id="console" class="bg-zinc-800 p-4 h-40 rounded-md overflow-auto text-lime-400"></pre>
+    </div>
+  </div>
+  <script src="src/renderer.js"></script>
+</body>
+
+</html>
